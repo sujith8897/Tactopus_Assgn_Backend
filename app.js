@@ -150,8 +150,8 @@ app.post("/add-teacher", (req,res) => {
         } else{
             console.log("uploaded");
             //console.log(fileNew.originalname);
-            if(fileNew==undefined){
-                image_name = 'http://localhost:3000/tactopus_logo.jpg';
+            if(fileNew==undefined || fileNew.originalname==undefined){
+                image_name = 'https://i.ibb.co/9hY9M9n/tactopus-logo.jpg';
             }else{
                 image_name ='http://localhost:3000/Image-' + fileNew.originalname;
             }
@@ -197,9 +197,9 @@ app.post("/edit-teacher", (req,res) =>{
             console.log(err);
         } else{
             console.log("uploaded");
-            //console.log(fileNew.originalname);
-            if(fileNew==undefined){
-                image_name = 'http://localhost:3000/tactopus_logo.jpg';
+            console.log(fileNew);
+            if(fileNew==undefined || fileNew.originalname==undefined){
+                image_name = 'https://i.ibb.co/9hY9M9n/tactopus-logo.jpg';
             }else{
                 image_name ='http://localhost:3000/Image-' + fileNew.originalname;
             }
